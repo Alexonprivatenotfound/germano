@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #516acf, #09abe6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Great Vibes', cursive;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #ffffff;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 2rem;
+      animation: fall linear forwards;
+      opacity: 0.9;
+    }
+
+    @keyframes fall {
+      from {
+        transform: translateY(-10vh) rotate(0deg) scale(1);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(110vh) rotate(360deg) scale(1.2);
+        opacity: 0.2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Buon Compleanno!</h1>
+  <h2>Auguri al capitano della nostra ciurma</h2>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "👨🏻‍✈️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 200);
+  </script>
+</body>
+</html>
