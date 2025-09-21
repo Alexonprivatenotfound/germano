@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // if all gone, redirect
             if (remaining === 0) {
               setTimeout(() => {
-                window.location.href = "celebration.html";
+                window.location.href = "messaggio.html";
               }, 800);
             }
           }, FADE_DURATION);
@@ -189,15 +189,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const active = updateCandleCount();
             if (active >= MAX_CANDLES) {
               blowingUnlocked = true;
-              showNotice("Blowing unlocked! Make a wish 💖");
+              showNotice("Ottimo lavoro!");
             }
           }
-          performBlowEvent();
+          performBlowEvent()
         }, 150);
       })
       .catch((err) => {
-        console.error("Unable to access microphone:", err);
-        showNotice("Microphone unavailable — blowing won't work.", 3000);
+        console.error("Unable to access microphone", err);
+        showNotice("Dai accesso al microfono!", 3000);
       });
   } else {
     console.warn("getUserMedia not supported in this browser.");
