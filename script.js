@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const MAX_CANDLES = 54;
   const REMOVAL_DELAY = 2000; // ms before disappearance after being blown
   const FADE_DURATION = 800;  // ms fade/scale duration
-  const BLOW_THRESHOLD = 0.1; // RMS threshold (lower => more sensitive)
+  const BLOW_THRESHOLD = 0.08; // RMS threshold (lower => more sensitive)
   const BLOW_COOLDOWN = 600;   // ms between accepted blow events
 
   let candles = [];            // stores candle DOM elements
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nowActive = updateCandleCount();
     if (!blowingUnlocked && nowActive >= MAX_CANDLES) {
       blowingUnlocked = true;
-      showNotice("Blowing unlocked! Make a wish 💖");
+      showNotice("Soffia!");
       console.log("Blowing unlocked (54 candles placed).");
     }
   }
